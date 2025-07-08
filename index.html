@@ -1,0 +1,81 @@
+{% load static %}
+{% include 'header.html' %}
+
+<div class="slider-item overlay" data-stellar-background-ratio="0.5"
+  style="background-image: url({% static 'images/hate5.jpg' %});">
+  <div class="container">
+    <div class="row slider-text align-items-center justify-content-center">
+      <div class="col-lg-12 text-center col-sm-12 element-animate">
+        <h1 class="mb-4">Hate Speech Detection</h1>
+        <p class="mb-4">Promoting safer online spaces through advanced machine learning techniques.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5 mr-auto mb-5">
+        <span class="d-block text-uppercase text-secondary">About Us</span>
+        <span class="divider my-4"></span>
+        <h2 class="mb-4 section-title">Understanding Hate Speech</h2>
+        <p>
+          Hate speech refers to abusive or threatening speech or writing that expresses prejudice against a particular group,
+          especially based on race, religion, or sexual orientation. It has become a growing concern on social media and online platforms,
+          impacting individuals and communities globally.
+        </p>
+        <h2 class="mb-4 section-title">Our Mission</h2>
+        <p>
+          Our project is dedicated to identifying and mitigating hate speech on social networks using advanced machine learning and
+          natural language processing (NLP) techniques. By leveraging sentiment analysis, we aim to promote respectful communication
+          and foster inclusive online environments.
+        </p>
+        <p><a href="#" class="btn btn-outline-black">Learn More</a></p>
+      </div>
+      <div class="col-lg-6">
+        <figure class="img-dotted-bg">
+          <img src="{% static 'images/hate3.png' %}" alt="Image" class="img-fluid">
+        </figure>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="mb-4">Why is Hate Speech Detection Important?</h2>
+        <p>
+          Online hate speech has severe consequences, including emotional harm, spreading misinformation, and exacerbating societal
+          divisions. Automated systems to detect and prevent hate speech are essential in creating a healthier and more respectful
+          digital ecosystem.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5">
+        <h2 class="mb-4 section-title">Key Features of Our System</h2>
+        <ul>
+          <li>Real-time hate speech detection and classification.</li>
+          <li>Sentiment analysis to understand context and tone.</li>
+          <li>Comprehensive reporting and analytics tools.</li>
+          <li>Scalable architecture for handling large datasets.</li>
+        </ul>
+      </div>
+      <div class="col-lg-6">
+        <figure class="img-dotted-bg">
+          <img src="{% static 'images/hate4.png' %}" alt="Image" class="img-fluid">
+        </figure>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% include 'footer.html' %}

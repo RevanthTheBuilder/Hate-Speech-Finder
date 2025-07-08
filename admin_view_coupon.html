@@ -1,0 +1,53 @@
+{% load static %}
+{% include 'admin_header.html' %}
+<form enctype="multipart/form-data" action="" method="post">
+{% csrf_token %}
+  <div class="inner-page">
+    <div class="slider-item overlay" style="background-image: url({% static 'images/dairy.farmer.jpg' %});"
+      data-stellar-background-ratio="0.5">
+      <div class="container">
+        <div class="row slider-text align-items-center justify-content-center">
+          <div class="col-lg-9 text-center col-sm-12 element-animate">
+            <h1 class="mb-4">View Coupon</h1>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="m-3">
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <th>TITLE</th>
+    <th>DESCRIPTION</th>
+    <th>EXPIRY DATE</th>
+    <th>COUPON VALUE</th>
+    <th>ACTION</th>
+
+
+  </tr>
+
+  </thead>
+  {% for x in coupon %}
+  <tbody>
+  <tr>
+  <td>{{ x.title }}</td>
+  <td>{{ x.description }}</td>
+  <td>{{ x.expiry_date }}</td>
+  <td>{{ x.coupon_value}}</td>
+
+  <td>
+
+        <a href="{% url 'del_coupon' id=x.id %}"  onclick="return confirm('Really Do You Want To Delete?')" class="btn btn-danger">Delete</a>
+    <td>
+  </tr>
+  </tbody>
+{% endfor %}
+
+
+</table>
+  </div>
+
+{% include 'footer.html' %}
+</form>

@@ -1,0 +1,64 @@
+{% load static %}
+{% include 'user_header.html' %}
+
+<form enctype="multipart/form-data" action="" method="post">
+{% csrf_token %}
+  <div class="inner-page">
+    <div class="slider-item overlay" style="background-image: url({% static 'images/hate1.png' %});" data-stellar-background-ratio="0.5">
+      <div class="container">
+        <div class="row slider-text align-items-center justify-content-center">
+          <div class="col-lg-9 text-center col-sm-12 element-animate">
+            <h1 class="mb-4">Customer Home</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5 mr-auto mb-5">
+          <span class="d-block text-uppercase text-secondary">Understanding Hate Speech</span>
+          <span class="divider my-4"></span>
+          <p>Hate speech is any kind of communication in speech, writing, or behavior that attacks or uses pejorative or discriminatory language with reference to a person or a group on the basis of who they are, in other words, based on their religion, ethnicity, nationality, race, color, descent, gender, or other identity factors.</p>
+          <p><a href="#" class="btn btn-outline-black">Learn More</a></p>
+        </div>
+        <div class="col-lg-6">
+          <figure class="img-dotted-bg">
+            <img src="{% static 'images/hate5.jpg' %}" alt="Image" class="img-fluid">
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 order-md-2">
+          <figure class="img-dotted-bg">
+            <img src="{% static 'images/hate6.jpg' %}" alt="Image" class="img-fluid">
+          </figure>
+        </div>
+        <div class="col-md-5 mr-auto">
+          <h2 class="mb-4 section-title"><strong>The Impact of Hate Speech</strong></h2>
+          <p>Hate speech can have significant social and psychological impacts. It can incite violence, propagate discrimination, and cause harm to individuals and communities. Understanding the nature of hate speech is crucial to combating it effectively and fostering inclusivity and respect in digital and real-world spaces.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="mb-4 section-title"><strong>Our Commitment</strong></h2>
+          <p>We aim to identify and mitigate hate speech through advanced machine learning and natural language processing techniques. Join us in creating a safer, more inclusive online community.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% include 'footer.html' %}
+</form>

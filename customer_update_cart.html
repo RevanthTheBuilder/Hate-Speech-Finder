@@ -1,0 +1,137 @@
+{% load static %}
+{% include 'customer_header.html' %}
+{% csrf_token %}
+  <div class="inner-page">
+    <div class="slider-item overlay" style="background-image: url({% static 'images/customer.home.jpg' %});"
+      data-stellar-background-ratio="0.5">
+      <div class="container">
+        <div class="row slider-text align-items-center justify-content-center">
+          <div class="col-lg-9 text-center col-sm-12 element-animate">
+            <h1 class="mb-4">Update Cart</h1>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mb-5 order-2">
+             {{msg}}
+          <form action="{% url 'customer_update_cart' %}" method="POST" enctype="multipart/form-data">
+           {% csrf_token %}
+            <div class="row">
+              <div class="col-md-12 form-group">
+                  <label for="cart">CART ID:</label>
+                        <input type="number" id="cart" name="id" value="{{x.id}}" readonly class="form-control"><br>
+
+
+                <label for="product">PRODUCT ID:</label>
+                        <input type="number" id="product" name="product" value="{{x.product_id}}" readonly class="form-control"><br>
+                  <label for="email">DAIRY EMAIL:</label>
+                        <input type="email"  name="dairy_email" value="{{x.dairy_email}}" readonly class="form-control"><br>
+
+                  <label for="email">CUSTOMER EMAIL:</label>
+                        <input type="email" id="email" name="customer_email" value="{{x.customer_email}}" readonly class="form-control"><br>
+
+
+
+                  <label for="milk_type">MILK TYPE:</label>
+				<select name="milk_type" id="milk_type" class="form-control">
+					<option value="-1">{{x.product.milk_type}}</option>
+					<option value="Buffalo Milk">Buffalo Milk</option>
+					<option value="Cow Milk">Cow Milk</option>
+				</select><br>
+
+
+                  <label for="product_grade">QUALITY OF PRODUCT:</label>
+                  <select name="product_grade" id="product_grade" class="form-control">
+                      <disable><option value="-1">{{x.product.product_grade}}</option></disable>
+					          <option value="Grade- A1">Grade- A1</option>
+					          <option value="Grade- A2">Grade- A2</option>
+				</select><br>
+
+
+                 <label for="manufacturing_date">MANUFACTURING DATE:</label>
+<input type="date" id="manufacturing_date" name="manufacturing_date" class="form-control" value="{{ x.product.manufacturing_date|date:'Y-m-d' }}"><br>
+
+                  <label for="expiry_date">EXPIRY DATE:</label>
+<input type="date" id="expiry_date" name="expiry_date" class="form-control" value="{{ x.product.expiry_date|date:'Y-m-d' }}">
+
+
+
+                  <div id="quantity"  class="form-group">
+                            <label>QUANTITY:</label>
+                            <input type="button" onclick="decrementValue()" value="-" />
+                            <input type="text" name="quantity" value="{{x.quantity}}" maxlength="2" max="10" size="1" id="number" />
+                            <input type="button" onclick="incrementValue();" value="+"/>
+                        </div>
+
+                  <label for="cost">COST:</label>
+                        <input type="number" id="cost" name="cost" value="{{x.cost}}" readonly class="form-control"><br>
+
+                   <label for="discount">DISCOUNT:</label>
+                        <input type="number" id="discount" name="discount" value="{{x.discount}}" readonly class="form-control"><br>
+                  <label for="cost">Total:</label>
+                        <input type="number" id="total" name="total" value="{{x.total}}" readonly class="form-control"><br>
+
+
+                <input type="submit" value="UPDATE" class="btn btn-primary px-3 py-3">
+
+
+
+
+
+              </div>
+            </div>
+          </form>
+
+
+
+           </div>
+      </div>
+    </div>
+  </div>
+
+
+{% include 'footer.html' %}
+<script>
+	 function  getPrice()
+	 {
+		var numVal1 = Number(document.getElementById("cost").value);
+		var numVal2 = Number(document.getElementById("discount").value);
+		var totalValue = numVal1 - numVal2
+		document.getElementById("total").value = totalValue;
+
+	}
+function incrementValue()
+{
+    var value = parseInt(document.getElementById('number').value, 10);
+    value = isNaN(value) ? 0 : value;
+    if(value<10){
+        value++;
+            document.getElementById('number').value = value;
+			var cost=parseInt(document.getElementById('cost').value);
+			var discount=parseInt(document.getElementById('discount').value);
+			var totalcost=cost*value-discount*value;
+			document.getElementById("total").value=totalcost;
+
+    }
+}
+function decrementValue()
+{
+    var value = parseInt(document.getElementById('number').value, 10);
+    value = isNaN(value) ? 0 : value;
+    if(value>1){
+        value--;
+            document.getElementById('number').value = value;
+            var cost=parseInt(document.getElementById('cost').value);
+			var discount=parseInt(document.getElementById('discount').value);
+			var totalcost=cost*value-discount*value;
+			document.getElementById("total").value=totalcost;
+    }
+
+}
+</script>
+

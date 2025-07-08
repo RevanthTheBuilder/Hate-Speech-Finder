@@ -1,0 +1,59 @@
+{% load static %}
+{% include 'admin_header.html' %}
+  <div class="inner-page">
+    <div class="slider-item overlay" style="background-image: url({% static 'images/hate6.jpg' %});" data-stellar-background-ratio="0.5">
+      <div class="container">
+        <div class="row slider-text align-items-center justify-content-center">
+          <div class="col-lg-9 text-center col-sm-12 element-animate">
+            <h1 class="mb-4">Dataset Speech</h1>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="m-3">
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>User</th>
+            <th>Name</th>
+            <th>DOB</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Ethnicity</th>
+            <th>Religion</th>
+            <th>Color</th>
+            <th>Nationality</th>
+            <th>City</th>
+            <th>Speecher</th>
+            <th>Location</th>
+            <th>Speech</th>
+            <th>Sentiment</th>
+            <th>Polarity</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in data %}
+        <tr>
+            <td>{{ row.user }}</td>
+            <td>{{ row.name }}</td>
+            <td>{{ row.dob }}</td>
+            <td>{{ row.age }}</td>
+            <td>{{ row.gender }}</td>
+            <td>{{ row.ethnicity }}</td>
+            <td>{{ row.religion }}</td>
+            <td>{{ row.color }}</td>
+            <td>{{ row.nationality }}</td>
+            <td>{{ row.city }}</td>
+            <td>{{ row.speecher }}</td>
+            <td>{{ row.location }}</td>
+            <td>{{ row.speech }}</td>
+            <td>{{ row.sentiment }}</td>
+            <td>{{ row.polarity }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+{% include 'footer.html' %}

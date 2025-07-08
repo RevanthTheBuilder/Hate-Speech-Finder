@@ -1,0 +1,109 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <title>Hate Speech</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+  <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/jquery.fancybox.min.css' %}">
+  <link rel="stylesheet" href="{% static 'fonts/ionicons/css/ionicons.min.css' %}">
+  <link rel="stylesheet" href="{% static 'fonts/fontawesome/css/font-awesome.min.css' %}">
+  <link rel="stylesheet" href="{% static 'fonts/flaticon/font/flaticon.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <style>
+    header .navbar-brand {
+      display: block;
+      width: 100%;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #fff;
+      padding-top:30px;
+    }
+
+    header nav {
+      margin-top: 2px; /* Add margin between title and navigation */
+    }
+
+  </style>
+
+
+</head>
+
+<body>
+
+  <header role="banner">
+    <div class="container-fluid bg-dark">
+      <!-- Centered Title -->
+      <a class="navbar-brand text-center text-white" href="{% url 'index' %}">
+        A Systematic Approach to Perform Hate Speech Detection in Social Networks
+      </a>
+
+      <!-- Navigation Menu -->
+      <nav class="navbar navbar-expand-lg">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05"
+          aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExample05">
+          <ul class="navbar-nav pl-md-5 mx-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'admin_home' %}">Home</a>
+            </li>
+
+
+
+            <li class="nav-item submenu dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                aria-expanded="false">Speech</a>
+              <ul class="dropdown-menu">
+                <li class="nav-item"><a class="nav-link" href="{% url 'admin_view_speech' %}">All_Speech</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'upload_dataset' %}">Upload_Dataset</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item submenu dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                aria-expanded="false">Notification</a>
+              <ul class="dropdown-menu">
+                <li class="nav-item"><a class="nav-link" href="{% url 'admin_add_notifications' %}">Add_Notification</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'admin_view_notification' %}">View_Notifications</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item submenu dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                aria-expanded="false">Speeches</a>
+              <ul class="dropdown-menu">
+                <li class="nav-item"><a class="nav-link" href="{% url 'view_hate_speech' %}">Hate_Speech</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'view_positive_speech' %}">Positive_Speech</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'view_negative_speech' %}">Negative_Speech</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'display_polarity_graphs' %}">Graph</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item submenu dropdown ">
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                aria-expanded="false">Profile</a>
+              <ul class="dropdown-menu" >
+                <li class="nav-item" ><a class="nav-link" href="{% url 'admin_change_password' %}">Change_Password</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'admin_view_customer' %}">View_Users</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'admin_logout' %}">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+</body>
+
+</html>

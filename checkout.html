@@ -1,0 +1,102 @@
+{% load static %}
+{% include 'customer_header.html' %}
+
+  <div class="inner-page">
+    <div class="slider-item overlay" style="background-image: url({% static 'images/view.customer.jpg' %});"
+      data-stellar-background-ratio="0.5">
+      <div class="container">
+        <div class="row slider-text align-items-center justify-content-center">
+          <div class="col-lg-9 text-center col-sm-12 element-animate">
+            <h1 class="mb-4">CHECK OUT</h1>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="section">
+    <div class="container">
+         <div class="alert alert-success">
+            <strong>{{ msg }}</strong>
+          </div>
+      <div class="row">
+        <div class="col-md-6 mb-5 order-2">
+          <form enctype="multipart/form-data" action="" method="post">
+{% csrf_token %}
+
+
+            <div class="row">
+              <div class="col-md-12 form-group">
+                <label for="customer_email">CUSTOMER EMAIL:</label>
+                        <input type="email" id="customer_email" value="{{customer_email}}" name="customer_email" class="form-control "><br>
+                  <label for="dairy_email">DAIRY EMAIL:</label>
+                        <input type="email" id="dairy_email" name="dairy_email" value="{{dairy_email}}" class="form-control "><br>
+                <label for="total_quantity">TOTAL QUANTITY:</label>
+                        <input type="text" id="total_quantity" name="quantity" value="{{tq}}" class="form-control "><br>
+                <label for="cost">COST:</label>
+                        <input type="number" id="cost" name="cost" value="{{tc}}" class="form-control "><br>
+                <label for="discount">TOTAL DISCOUNT:</label>
+                        <input type="number" id="discount" value="{{td}}" name="discount" class="form-control "><br>
+                <label for="cost">TOTAL COST:</label>
+                        <input type="number" id="totalcost" value="{{fc}}" name="total" class="form-control "><br>
+                  <label for="address">ADDRESS:</label>
+                        <input type="text" id="address" name="address"  class="form-control "><br>
+                   <label for="delivery_date">DELIVERY DATE:</label>
+                        <input type="date" id="delivery_date" name="delivery_date" class="form-control "><br>
+
+                <input type="submit" value="SUBMIT" class="btn btn-primary px-3 py-3">
+
+
+              </div>
+            </div>
+          </form>
+
+
+
+           </div>
+      </div>
+
+    </div>
+  </div>
+
+
+{% include 'footer.html' %}
+<script>
+	 function  getPrice()
+	 {
+		var numVal1 = Number(document.getElementById("cost").value);
+		var numVal2 = Number(document.getElementById("discount").value);
+		var totalValue = numVal1 - numVal2
+		document.getElementById("total").value = totalValue;
+
+	}
+function incrementValue()
+{
+    var value = parseInt(document.getElementById('number').value, 10);
+    value = isNaN(value) ? 0 : value;
+    if(value<10){
+        value++;
+            document.getElementById('number').value = value;
+			var cost=parseInt(document.getElementById('cost').value);
+			var discount=parseInt(document.getElementById('discount').value);
+			var totalcost=cost*value-discount*value;
+			document.getElementById("total").value=totalcost;
+
+    }
+}
+function decrementValue()
+{
+    var value = parseInt(document.getElementById('number').value, 10);
+    value = isNaN(value) ? 0 : value;
+    if(value>1){
+        value--;3
+            document.getElementById('number').value = value;
+            var cost=parseInt(document.getElementById('cost').value);
+			var discount=parseInt(document.getElementById('discount').value);
+			var totalcost=cost*value-discount*value;
+			document.getElementById("total").value=totalcost;
+
+
+}
+</script>
+

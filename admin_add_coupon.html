@@ -1,0 +1,56 @@
+{% load static %}
+{% include 'admin_header.html' %}
+<form enctype="multipart/form-data" action="" method="post">
+{% csrf_token %}
+  <div class="inner-page">
+    <div class="slider-item overlay" style="background-image: url({% static 'images/dairy.farmer.jpg' %});"
+      data-stellar-background-ratio="0.5">
+      <div class="container">
+        <div class="row slider-text align-items-center justify-content-center">
+          <div class="col-lg-9 text-center col-sm-12 element-animate">
+            <h1 class="mb-4">Add Coupon</h1>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="section">
+    <div class="container">
+         {{msg}}
+      <div class="row">
+
+        <div class="col-md-6 mb-5 order-2">
+
+          <form action="" method="POST">
+           {% csrf_token %}
+            <div class="row">
+              <div class="col-md-12 form-group">
+                <label for="title">TITLE:</label>
+                        <input type="text" id="title" name="title" class="form-control" required placeholder="Enter Title"><br>
+                  <label for="description">DESCRIPTIONS:</label>
+                  <textarea name="description" id="description" class="form-control" required  cols="30" rows="10"></textarea><br>
+                  <label for="expiry_date">EXPIRY DATE:</label>
+                        <input type="date" id="expiry_date" name="expiry_date" required class="form-control"><br>
+                  <label for="coupon_value">COUPON VALUE: </label>
+                        <input type="text" id="coupon_value" name="coupon_value" required class="form-control "><br>
+
+                <input type="submit" value="submit" class="btn btn-primary px-3 py-3">
+
+
+
+              </div>
+            </div>
+          </form>
+
+
+
+           </div>
+      </div>
+
+    </div>
+  </div>
+
+
+{% include 'footer.html' %}
+</form>

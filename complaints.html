@@ -1,0 +1,64 @@
+{% load static %}
+{% include 'customer_header.html' %}
+  <!-- END header -->
+<form enctype="multipart/form-data" action="" method="post">
+{% csrf_token %}
+  <div class="inner-page">
+    <div class="slider-item overlay" style="background-image: url({% static 'images/dairy.farmer.jpg' %});"
+      data-stellar-background-ratio="0.5">
+      <div class="container">
+        <div class="row slider-text align-items-center justify-content-center">
+          <div class="col-lg-9 text-center col-sm-12 element-animate">
+            <h1 class="mb-4">COMPLAINTS</h1>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mb-5 order-2">
+          <form action="" method="post">
+            <div class="row">
+              <div class="col-md-6 form-group">
+                <label for="booking_id">BOOKING ID:</label>
+                <input type="number" id="booking_id" name="booking_id" value="{{daily.id}}" required readonly class="form-control ">
+              </div>
+              <div class="col-md-6 form-group">
+                <label for="customer_email">CUSTOMER EMAIL:</label>
+                <input type="email" id="customer_email" name="customer_email" value="{{email}}" required readonly class="form-control ">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 form-group">
+                <label for="dairy_email">DIARY EMAIL:</label>
+                <input type="email" id="dairy_email" name="dairy_email" value="{{daily.dairy_email}}" required readonly class="form-control ">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 form-group">
+                <label for="milk">MILK:</label>
+                <input type="text" id="milk" name="milk" required class="form-control ">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 form-group">
+                <label for="curd">CURD:</label>
+                <input type="text" id="curd" name="curd" required class="form-control ">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 form-group">
+                <input type="submit" value="SUBMIT" class="btn btn-primary px-3 py-3">
+              </div>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+{% include 'footer.html' %}
+</form>

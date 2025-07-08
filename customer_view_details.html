@@ -1,0 +1,57 @@
+{% load static %}
+{% include 'customer_header.html' %}
+
+  <div class="inner-page">
+    <div class="slider-item overlay" style="background-image: url({% static 'images/view.customer.jpg' %});"
+      data-stellar-background-ratio="0.5">
+      <div class="container">
+        <div class="row slider-text align-items-center justify-content-center">
+          <div class="col-lg-9 text-center col-sm-12 element-animate">
+            <h1 class="mb-4">DETAILS</h1>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container">
+      <div class="row justify-content-center mb-5 element-animate">
+        <div class="col-md-8 text-center">
+          <h2 class="mb-4 section-title">Product <strong>Details</strong></h2>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="media d-block media-custom text-center">
+            <a href=""><img src="{{x.image.url}}" alt="Image Placeholder" width="400px" height="440px"></a>
+            <div class="media-body">
+              <h4 class="mt-0 text-black">{{x.product}}</h4>
+              <h3 class="mt-0 text-black">{{x.milk_type}}</h3>
+              <p>{{x.product_grade}}</p>
+              <p><strong>Storage area: </strong>{{x.storage}}</p>
+               <p><strong>Manufacturing Date: </strong>{{x.manufacturing_date}}</p>
+               <p><strong>Expiry Date: </strong>{{x.expiry_date}}</p>
+               <p><strong>Contains of : </strong>{{x.contains}}</p>
+               <h5>Cost : {{x.cost}} /-</h5>
+               <p><strong>Discount of : </strong>{{x.discount}}%</p>
+               <p><strong>description : </strong>{{x.description}}</p><br>
+              <a href="{% url 'add_cart' id=x.id %}" class="btn btn-primary px-3 py-3">ADD CART</a>
+
+
+            </div>
+
+          </div>
+        </div>
+
+
+
+
+      </div>
+
+    </div>
+  </div>
+
+{% include 'footer.html' %}

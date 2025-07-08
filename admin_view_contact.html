@@ -1,0 +1,47 @@
+{% load static %}
+{% include 'admin_header.html' %}
+  <div class="inner-page">
+    <div class="slider-item overlay" style="background-image: url({% static 'images/dairy.farmer.jpg' %});" data-stellar-background-ratio="0.5">
+      <div class="container">
+        <div class="row slider-text align-items-center justify-content-center">
+          <div class="col-lg-9 text-center col-sm-12 element-animate">
+            <h1 class="mb-4">View Contact</h1>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="m-3">
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <th>NAME</th>
+    <th>EMAIL</th>
+    <th>PHONE</th>
+    <th>MESSAGE</th>
+
+
+  </tr>
+
+  </thead>
+  {% for x in cont %}
+  <tbody>
+  <tr>
+  <td>{{ x.name }}</td>
+  <td>{{ x.email }}</td>
+  <td>{{ x.phone }}</td>
+  <td>{{ x.message }}</td>
+
+  </tr>
+  </tbody>
+{% endfor %}
+
+
+</table>
+  </div>
+  <!-- END section -->
+{% include 'footer.html' %}
+
+
+

@@ -1,0 +1,50 @@
+{% load static %}
+{% include 'header.html' %}
+
+  <div class="inner-page">
+    <div class="slider-item overlay" style="background-image: url({% static 'images/hate6.jpg' %});"
+      data-stellar-background-ratio="0.5">
+      <div class="container">
+        <div class="row slider-text align-items-center justify-content-center">
+          <div class="col-lg-9 text-center col-sm-12 element-animate">
+            <h1 class="mb-4">User Login</h1>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="section">
+    <div class="container">
+      {{msg}}
+      <div class="row">
+        <div class="col-md-6 mb-5 order-2">
+          <form enctype="multipart/form-data" action="" method="post">
+{% csrf_token %}
+
+
+            <div class="row">
+              <div class="col-md-12 form-group">
+                <label for="email">EMAIL:</label>
+                        <input type="email" id="email" name="email" required class="form-control ">
+                  <label for="password">PASSWORD:</label>
+                        <input type="password" id="password" name="password" required class="form-control "><br>
+
+                <input type="submit" value="LOGIN" class="btn btn-primary px-3 py-3">
+
+            <button class="btn btn-primary btn-link px-3 py-3" ><a href="{% url 'registration' %}">Registration</a></button>
+              </div>
+            </div>
+          </form>
+
+
+  
+           </div>
+      </div>
+  
+    </div>
+  </div>
+
+
+{% include 'footer.html' %}
+

@@ -1,0 +1,48 @@
+{% load static %}
+{% include 'admin_header.html' %}
+<form enctype="multipart/form-data" action="" method="post">
+{% csrf_token %}
+  <div class="inner-page">
+    <div class="slider-item overlay" style="background-image: url({% static 'images/hate2.png' %});"
+      data-stellar-background-ratio="0.5">
+      <div class="container">
+        <div class="row slider-text align-items-center justify-content-center">
+          <div class="col-lg-12 text-center col-sm-12 element-animate">
+            <h1 class="mb-4">View Notifications</h1>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="m-3">
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <th>TITLE</th>
+    <th>DESCRIPTION</th>
+    <th>DATE $TIME</th>
+    <th>ACTION</th>
+
+
+  </tr>
+
+  </thead>
+  {% for x in note %}
+  <tbody>
+  <tr>
+  <td>{{ x.title }}</td>
+  <td>{{ x.description }}</td>
+  <td>{{ x.date_time }}</td>
+ <td><a href="{% url 'admin_delete_not' id=x.id %}" onclick="return confirm('Really Do You Want To Delete?')" class="btn btn-danger">Delete</a></td>
+
+  </tr>
+  </tbody>
+{% endfor %}
+
+
+</table>
+  </div>
+
+{% include 'footer.html' %}
+</form>

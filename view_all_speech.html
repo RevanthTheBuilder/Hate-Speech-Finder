@@ -1,0 +1,68 @@
+{% load static %}
+{% include 'user_header.html' %}
+  <div class="inner-page">
+    <div class="slider-item overlay" style="background-image: url({% static 'images/hate3.png' %});" data-stellar-background-ratio="0.5">
+      <div class="container">
+        <div class="row slider-text align-items-center justify-content-center">
+          <div class="col-lg-9 text-center col-sm-12 element-animate">
+            <h1 class="mb-4">All Speech</h1>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="m-3">
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <th>Person Name</th>
+                <th>Age</th>
+                <th>DOB</th>
+                <th>Gender</th>
+                <th>Ethnicity</th>
+                <th>Religion</th>
+                <th>Color</th>
+                <th>Nationality</th>
+                <th>City</th>
+                <th>Speecher</th>
+                <th>Speech</th>
+                <th>Location</th>
+                <th>Score</th>
+                <th>Status</th>
+
+
+  </tr>
+
+  </thead>
+  {% for data in obj %}
+  <tbody>
+  <tr>
+   <td>{{data.names}}</td>
+                <td>{{data.age}}</td>
+                <td>{{data.dob}}</td>
+                <td>{{data.gender}}</td>
+                <td>{{data.ethnicity}}</td>
+                <td>{{data.religion}}</td>
+                <td>{{data.color}}</td>
+                <td>{{data.nationality}}</td>
+                <td>{{data.city}}</td>
+                <td>{{data.speecher}}</td>
+                <td>{{data.speech}}</td>
+                <td>{{data.location}}</td>
+                <td>{{data.score}}</td>
+                <td>{{data.status}}</td>
+
+
+  </tr>
+  </tbody>
+{% endfor %}
+
+
+</table>
+  </div>
+<h1 class="text-center">Speech Scores Line Graph</h1>
+    <img src="data:image/png;base64,{{ graph }}" alt="Speech Scores Graph">
+  <!-- END section -->
+{% include 'footer.html' %}
+

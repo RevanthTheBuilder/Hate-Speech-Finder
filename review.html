@@ -1,0 +1,59 @@
+{% load static %}
+{% include 'customer_header.html' %}
+
+  <div class="inner-page">
+    <div class="slider-item overlay" style="background-image: url({% static 'images/view.customer.jpg' %});"
+      data-stellar-background-ratio="0.5">
+      <div class="container">
+        <div class="row slider-text align-items-center justify-content-center">
+          <div class="col-lg-9 text-center col-sm-12 element-animate">
+            <h1 class="mb-4">Customer Add Review</h1>
+            <p class="custom-breadcrumbs"><a href="index.html">Home</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mb-5 order-2">
+             {{msg}}
+          <form  action="" method="post">
+{% csrf_token %}
+
+
+            <div class="row">
+              <div class="col-md-12 form-group">
+                <label >EMAIL:</label>
+                        <input type="email"  name="customer_email" required readonly value="{{email}}" class="form-control ">
+                  <label >VENDOR ID:</label>
+                        <input type="email"  name="dairy_email" required readonly value="{{x.email}}"class="form-control "><br>
+                   <label >REVIEW:</label>
+                        <input type="text"  name="review" required class="form-control ">
+
+                   <label for="rating">RATING:</label>
+				<select name="rating" id="rating" class="form-control">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+
+				</select><br>
+
+                <input type="submit" value="UPLOAD" class="btn btn-primary px-3 py-3">
+
+              </div>
+            </div>
+          </form>
+
+
+           </div>
+      </div>
+
+    </div>
+  </div>
+
+
+{% include 'footer.html' %}

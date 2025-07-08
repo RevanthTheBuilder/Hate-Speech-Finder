@@ -1,0 +1,50 @@
+{% load static %}
+{% include 'customer_header.html' %}
+
+  <div class="inner-page">
+    <div class="slider-item overlay" style="background-image: url({% static 'images/cow5.jpeg' %});"
+      data-stellar-background-ratio="0.5">
+      <div class="container">
+        <div class="row slider-text align-items-center justify-content-center">
+          <div class="col-lg-9 text-center col-sm-12 element-animate">
+            <h1 class="mb-4">VIEW CART PRODUCTS</h1>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container">
+      <div class="row justify-content-center mb-5 element-animate">
+        <div class="col-md-8 text-center">
+          <h2 class="mb-4 section-title">MY <strong>PRODUCTS</strong></h2>
+
+        </div>
+      </div>
+      <div class="row">
+        {% for x in order_products %}
+        <div class="col-lg-4">
+          <div class="media d-block media-custom text-center">
+            <a href="{% url 'dairy_view_product_details'  id=x.id %}"><img src="{{x.product.image.url}}" alt="Image Placeholder" width="230px" height="300px"></a>
+            <div class="media-body">
+              <h2 class="mt-0 text-black">{{x.title}}</h2>
+              <h4 class="mt-0 text-black">{{x.milk_type}}</h4>
+              <p>Cost: {{x.cost}} /- </p>
+              <p>Discount upto: {{x.discount}} %</p>
+            </div>
+
+          </div>
+
+        </div>
+{% endfor %}
+
+
+
+      </div>
+    </div>
+
+  </div>
+
+{% include 'footer.html' %}

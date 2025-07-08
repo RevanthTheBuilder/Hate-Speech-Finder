@@ -1,0 +1,60 @@
+{% load static %}
+{% include 'header.html' %}
+  <!-- END header -->
+<form enctype="multipart/form-data" action="" method="post">
+{% csrf_token %}
+  <div class="inner-page">
+    <div class="slider-item overlay" style="background-image: url({% static 'images/dairy.farmer.jpg' %});"
+      data-stellar-background-ratio="0.5">
+      <div class="container">
+        <div class="row slider-text align-items-center justify-content-center">
+          <div class="col-lg-9 text-center col-sm-12 element-animate">
+            <h1 class="mb-4">Contact Us</h1>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mb-5 order-2">
+          <form action="#" method="post">
+            <div class="row">
+              <div class="col-md-6 form-group">
+                <label for="name">NAME:</label>
+                <input type="text" id="name" name="name" required class="form-control ">
+              </div>
+              <div class="col-md-6 form-group">
+                <label for="phone">MOBILE NO:</label>
+                <input type="number" id="phone" name="phone" required class="form-control ">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12 form-group">
+                <label for="email">EMAIL:</label>
+                <input type="email" id="email" name="email" required class="form-control ">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 form-group">
+                <label for="message">WRITE MESSAGE:</label>
+                <textarea name="message" id="message" class="form-control" required  cols="30" rows="8"></textarea>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 form-group">
+                <input type="submit" value="Send Message" class="btn btn-primary px-3 py-3">
+              </div>
+            </div>
+          </form>
+        </div>
+
+        </div>
+      </div>
+    </div>
+
+{% include 'footer.html' %}
+</form>

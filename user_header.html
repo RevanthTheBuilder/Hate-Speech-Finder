@@ -1,0 +1,108 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <title>Hate Speech</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+  <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/jquery.fancybox.min.css' %}">
+  <link rel="stylesheet" href="{% static 'fonts/ionicons/css/ionicons.min.css' %}">
+  <link rel="stylesheet" href="{% static 'fonts/fontawesome/css/font-awesome.min.css' %}">
+  <link rel="stylesheet" href="{% static 'fonts/flaticon/font/flaticon.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <style>
+    header .navbar-brand {
+      display: block;
+      width: 100%;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #fff;
+    }
+
+    header nav {
+      margin-top: 10px; /* Add margin between title and navigation */
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <header role="banner">
+    <div class="container-fluid bg-dark">
+      <!-- Centered Title -->
+      <a class="navbar-brand text-center text-white" href="#">
+        A Systematic Approach to Perform Hate Speech Detection in Social Networks
+      </a>
+
+      <!-- Navigation Menu -->
+      <nav class="navbar navbar-expand-lg">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05"
+          aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+        <div class="collapse navbar-collapse" id="navbarsExample05">
+          <ul class="navbar-nav pl-md-5 ml-auto">
+            <li class="nav-item">
+              <a class="nav-link " href="{% url 'customer_home' %}">HOME</a>
+            </li>
+
+            <li class="nav-item">
+
+            </li>
+
+
+
+
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'add_speech' %}">Add Speech</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'view_my_speech' %}">My Speech</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'view_all_speech' %}">All Speech</a>
+            </li>
+
+
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'customer_view_notifications' %}">NOTIFICATIONS</a>
+            </li>
+
+
+
+
+
+            <li class="nav-item submenu dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                  aria-expanded="false">MY ACCOUNT</a>
+                <ul class="dropdown-menu ">
+                  <li class="nav-item"><a class="nav-link" href="{% url 'my_profile' %}">MY PROFILE</a></li>
+                  <li class="nav-item"><a class="nav-link" href="{% url 'customer_change_password' %}">CHANGE PASSWORD </a></li>
+                  <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">LOGOUT</a></li>
+
+
+                </ul>
+							</li>
+
+
+
+
+
+
+            </ul>
+
+
+        </div>
+      </div>
+    </nav>
+  </header>

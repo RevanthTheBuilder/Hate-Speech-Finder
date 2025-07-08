@@ -1,0 +1,75 @@
+{% load static %}
+{% include 'customer_header.html' %}
+  <div class="inner-page">
+    <div class="slider-item overlay" style="background-image: url({% static 'images/dairy.farmer.jpg' %});" data-stellar-background-ratio="0.5">
+      <div class="container">
+        <div class="row slider-text align-items-center justify-content-center">
+          <div class="col-lg-9 text-center col-sm-12 element-animate">
+            <h1 class="mb-4">MY ORDERS</h1>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="m-3">
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <th>DAIRY EMAIL</th>
+    <th>CUSTOMER EMAIL</th>
+    <th>QUANTITY</th>
+    <th>COST</th>
+    <th>DISCOUNT</th>
+    <th>TOTAL</th>
+    <th>ADDRESS</th>
+    <th>DELIVERY_DATE</th>
+    <th>ORDER_DATE TIME</th>
+    <th>STATUS</th>
+    <th>REASON</th>
+    <th>VIEW PRODUCTS</th>
+
+
+  </tr>
+
+  </thead>
+  {% for x in order %}
+  <tbody>
+  <tr>
+  <td>{{ x.dairy_email }}</td>
+  <td>{{ x.customer_email }}</td>
+  <td>{{ x.quantity }}</td>
+  <td>{{ x.cost }}</td>
+    <td>{{ x.discount }}</td>
+  <td>{{ x.total }}</td>
+  <td>{{ x.address }}</td>
+  <td>{{ x.delivery_date }}</td>
+    <td>{{ x.order_datetime }}</td>
+
+   <td> {% if x.status == 'Pending' %}
+              <a href="{% url 'cancel_order' id=x.id %}" class="btn btn-warning" >Cancel</a>
+              {% elif x.status == 'Accepted' %}
+                  <button class="btn btn-success" disabled="disabled" data-toggle="modal" data-target="#reply_modal">Accepted</button>
+              {% elif x.status == 'Cancelled' %}
+                  <button class="btn btn-danger" disabled="disabled" data-toggle="modal" data-target="#reply_modal">Cancelled</button>
+              {% elif x.status == 'Delivered' %}
+                  <button class="btn btn-info" disabled="disabled" data-toggle="modal" data-target="#reply_modal">Delivered</button>
+              {% else %}
+              <button class="btn btn-danger" disabled="disabled" data-toggle="modal" data-target="#reply_modal">Rejected</button>
+              {% endif %}</td>
+  <td>{{ x.reason }}</td>
+    <td><a href="{% url 'customer_cart_products' id=x.id %}">View Products</a></td>
+
+
+  </tr>
+  </tbody>
+{% endfor %}
+
+
+</table>
+  </div>
+  <!-- END section -->
+{% include 'footer.html' %}
+
+
+

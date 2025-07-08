@@ -1,0 +1,52 @@
+{% load static %}
+{% include 'customer_header.html' %}
+
+<form enctype="multipart/form-data" action="" method="post">
+{% csrf_token %}
+  <div class="inner-page">
+    <div class="slider-item overlay" style="background-image: url({% static 'images/dairy.farmer.jpg' %});" data-stellar-background-ratio="0.5">
+      <div class="container">
+        <div class="row slider-text align-items-center justify-content-center">
+          <div class="col-lg-9 text-center col-sm-12 element-animate">
+            <h1 class="mb-4"> Customer View Dairy</h1>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container">
+      <div class="row justify-content-center mb-5 element-animate">
+        <div class="col-md-8 text-center">
+          <h2 class="mb-4 section-title">Meet Our <strong>Dairy</strong></h2>
+        </div>
+      </div>
+      <div class="row">
+        {% for x in dairy %}
+        <div class="col-lg-4">
+          <div class="media d-block media-custom text-center">
+            <img src="{{ x.image.url }}" alt="Image Placeholder" width="230px" height="300px">
+            <div class="media-body">
+              <h4 class="mt-0 text-black">{{x.name}}</h4>
+              <h6 class="mt-0 text-black">{{x.email}}</h6>
+              <p>{{x.phone}}</p>
+              <p>{{x.address}}</p>
+              <a href="{% url 'customer_view_product' email=x.email %}" class="btn btn-info">View Products</a><br>
+              <a href="{% url 'customer_view_reviews' email=x.email %}" class="btn btn-warning">View Review</a>
+
+
+
+          </div>
+        </div>
+
+        </div>
+        {% endfor %}
+        </div>
+
+
+        </div></div>
+</form>
+{% include 'footer.html' %}
+

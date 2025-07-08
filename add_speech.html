@@ -1,0 +1,118 @@
+{% load static %}
+{% include 'user_header.html' %}
+{% csrf_token %}
+  <div class="inner-page">
+    <div class="slider-item overlay" style="background-image: url({% static 'images/hate4.png' %});" data-stellar-background-ratio="0.5">
+      <div class="container">
+        <div class="row slider-text align-items-center justify-content-center">
+          <div class="col-lg-9 text-center col-sm-12 element-animate">
+            <h1 class="mb-4">Add Speech</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mb-5 order-2">
+
+          <form action="" method="POST" enctype="multipart/form-data">
+           {% csrf_token %}
+            <div class="row">
+                {{msg}}
+              <div class="col-md-12 form-group">
+
+                  <label for="names">User Id</label>
+        <input type="number" id="user" value="{{user.id}}" class="form-control" name="user" required readonly>
+
+        <label for="names">Name</label>
+        <input type="text" id="names" class="form-control" name="names" required>
+
+        <label for="age">Age</label>
+        <input type="number" id="age" class="form-control" name="age" required>
+
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob" class="form-control" name="dob" required>
+
+        <label for="gender">Gender</label>
+        <select id="gender" name="gender" class="form-control" required>
+            <option value="" disabled selected>Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <label for="ethnicity">Ethnicity</label>
+        <select id="ethnicity" name="ethnicity" class="form-control" required>
+            <option value="" disabled selected>Select Ethnicity</option>
+            <option value="Asian">Asian</option>
+            <option value="African">African</option>
+            <option value="Caucasian">Caucasian</option>
+            <option value="Hispanic">Hispanic</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <label for="religion">Religion</label>
+        <select id="religion" name="religion" class="form-control" required>
+            <option value="" disabled selected>Select Religion</option>
+            <option value="Christianity">Christianity</option>
+            <option value="Islam">Islam</option>
+            <option value="Hinduism">Hinduism</option>
+            <option value="Buddhism">Buddhism</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <label for="color">Color</label>
+        <select id="color" name="color" class="form-control" required>
+            <option value="" disabled selected>Select Color</option>
+            <option value="Black">Black</option>
+            <option value="White">White</option>
+            <option value="Brown">Brown</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <label for="nationality">Nationality</label>
+        <select id="nationality" name="nationality" class="form-control" required>
+            <option value="" disabled selected>Select Nationality</option>
+            <option value="Indian">Indian</option>
+            <option value="American">American</option>
+            <option value="Canadian">Canadian</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <label for="city">City</label>
+        <input type="text" id="city" name="city" class="form-control" required>
+
+        <label for="speecher">Speecher</label>
+        <input type="text" id="speecher" name="speecher" class="form-control" required>
+
+        <label for="speech">Speech Content</label>
+        <textarea id="speech" name="speech" rows="5" class="form-control" required></textarea>
+
+        <label for="location">Location</label>
+        <input type="text" id="location" name="location" class="form-control" required> <br>
+                <input type="submit" value="Add Speech" class="btn btn-primary px-3 py-3">
+              </div>
+            </div>
+          </form>
+           </div>
+      </div>
+    </div>
+  </div>
+
+    <script>
+        // Set the max attribute of the date input to today's date
+        function setMaxDate() {
+            const dobInput = document.getElementById("dob");
+            const today = new Date();
+            const maxDate = today.toISOString().split("T")[0];
+            dobInput.setAttribute("max", maxDate);
+        }
+
+        window.onload = setMaxDate; // Set the max date when the page loads
+    </script>
+
+{% include 'footer.html' %}
+
+
